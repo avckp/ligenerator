@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<html>
+
+	<head>
+	</head>
+	
+	<body>
+		<textarea id="textareas" cols=33 rows=10>
+			
+		</textarea>
+		Put Your Text Inside and Click here
+	</body>
+	
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript">
+			$("#textareas").focus(function(){
+				console.log(finalString);
+				var newList=document.createElement("div");
+				newList.innerHTML="";
+				document.body.appendChild(newList);
+
+		$("#textareas").blur(function(){
+			var completeText=$("#textareas").val();
+			var arrayCompleteText=completeText.split("\n");
+			var finalString="&ltul&gt"+"\n";
+			for(var i=0;i<arrayCompleteText.length;i++)
+						finalString+="&ltli&gt"+arrayCompleteText[i]+"&lt/li&gt"+"\n";
+			finalString+="&lt/ul&gt";
+		console.log(finalString);
+		var newList=document.createElement("div");
+		newList.innerHTML=finalString;
+		document.body.appendChild(newList);
+
+		});
+		</script>
+	</html>
